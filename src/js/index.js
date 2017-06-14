@@ -1,3 +1,5 @@
+const Soundfont = require('soundfont-player');
+
 // const aNote = document.getElementById('a');
 // const bNote = document.getElementById('b');
 // const cNote = document.getElementById('c');
