@@ -23,8 +23,14 @@ ul, li {
 	}
 }
 
+.clef {
+	position: absolute;
+	font-size: 9rem;
+	top: -3rem;
+}
+
 .notes {
-	margin: 0 auto;
+	margin-left: 3rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
