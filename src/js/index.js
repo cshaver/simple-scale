@@ -4,6 +4,8 @@ import Soundfont from 'soundfont-player';
 
 const notes = document.getElementById('notes');
 
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
 const ac = new AudioContext();
 
 var instrument;
