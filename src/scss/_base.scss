@@ -2,17 +2,13 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Arial', sans-serif;
+	font-family: system-ui, sans-serif;
 }
 
 main {
 	padding: 1em;
 	max-width: 980px;
 	margin: 0 auto;
-}
-
-section + section {
-	margin-top: 2em;
 }
 
 ul, li {

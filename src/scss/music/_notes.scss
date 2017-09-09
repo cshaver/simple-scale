@@ -13,11 +13,9 @@
 
 .note-button {
 	position: relative;
-
-	font-family: 'Arial', sans-serif;
 	font-size: 2rem;
 	width: 3rem;
-	padding: 7rem 0 0.5rem;
+	padding: 8rem 0 0.5rem;
 	user-select: none;
 
 	appearance: none;
@@ -30,7 +28,7 @@
 		color: black;
 
 		&:before {
-			transform: translateY(-5%) translateX(-50%);
+			transform: scale(1.1) translateY(-2%);
 		}
 	}
 
@@ -39,26 +37,35 @@
 		box-shadow: 0 0 0 3px transparentize(pink, 0.5);
 	}
 
-	&:before,
-	& ~ .ledger-line {
+	&:before {
+		content: '';
+
 		position: absolute;
 		top: 0;
-		font-size: 5rem;
-	}
+		left: 0;
+		right: 0;
+		width: 3rem;
+		height: 4.9rem;
 
-	&:before {
-		content: '♩';
-		width: 100%;
 		transition: all 0.03s ease-in;
-		transform: translateX(-50%);
+
+		background: {
+			repeat: no-repeat;
+			position: center;
+			size: contain;
+			image: url('/src/images/quarter-note.svg');
+		}
+
 	}
 
 	& ~ .ledger-line {
 		display: block;
+		border-top: 1px solid black;
 		width: 80%;
+		position: absolute;
+		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
-		border-top: 1px solid black;
 	}
 }
 
@@ -66,12 +73,12 @@ $-notes: (c, d, e, f, g, a, b);
 $-octaves: (4, 5);
 
 $note-increments: 8.5;
-$note-offset: (1 * $note-increments);
+$note-offset: 64;
 
 $octave-increments: (7 * $note-increments);
 $octave-offset: -2;
 
-$ledger-line-offset: 87;
+$ledger-line-offset: 63;
 
 @for $i from 1 through length($-notes) {
 	$note: nth($-notes, $i);

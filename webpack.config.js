@@ -20,8 +20,11 @@ module.exports = {
 					fallback: 'style-loader',
 					use: 'css-loader!postcss-loader!sass-loader'
 				})
+			},
+			{
+				test: /\.(png|jpg|svg)$/,
+				loader: 'url-loader'
 			}
-			// You could also use other loaders the same way. I. e. the autoprefixer-loader
 		]
 	},
 	// Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
