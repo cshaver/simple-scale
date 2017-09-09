@@ -1,16 +1,18 @@
 .scale {
 	position: relative;
 	text-align: center;
+	min-width: 460px;
 }
 
 .staff {
 	width: 100%;
 	margin-bottom: 2rem;
+	position: absolute;
 
 	.line {
 		height: 1px;
 		background: black;
-		margin: 1rem 0;
+		margin: 0 0 1rem;
 	}
 }
 
