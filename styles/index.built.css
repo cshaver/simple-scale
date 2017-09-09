@@ -113,7 +113,7 @@ html.no-js .no-js {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url("/src/images/quarter-note.svg"); }
+    background-image: url(../images/d3b9a0544bfa8b2800ee1ae551345e6f.svg); }
   .note-button ~ .ledger-line {
     display: block;
     border-top: 1px solid black;
@@ -244,4 +244,4 @@ html.no-js .no-js {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("/src/images/treble-clef.svg"); }
+  background-image: url(../images/4e3c47de795ee781c2b6b4122f403b33.svg); }
