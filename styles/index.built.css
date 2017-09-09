@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif; }
+
+main {
+  padding: 1em;
+  max-width: 980px;
+  margin: 0 auto; }
+
+section {
+  margin-bottom: 2em; }
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+html .no-web-audio {
+  display: none; }
+
+html.no-web-audio .web-audio {
+  display: none; }
+
+html.no-web-audio .no-web-audio {
+  display: block; }
+
+html .no-js {
+  display: none; }
+
+html.no-js .js {
+  display: none; }
+
+html.no-js .no-js {
+  display: block; }
+
+.notes {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.note {
+  display: inline-block; }
+
+.note-button {
+  width: 3rem;
+  font-size: 2rem; }
+  .note-button:before,
+  .note-button ~ .ledger-line {
+    position: absolute;
+    top: 0;
+    font-size: 5rem;
+    width: 3rem;
+    transform: translateX(-50%); }
+  .note-button:before {
+    content: '\2669'; }
+  .note-button ~ .ledger-line {
+    display: block;
+    width: 0.5em;
+    margin-left: 20px;
+    border-top: 1px solid black; }
+
+.note-c:before {
+  top: 8.5px; }
+
+.note-c ~ .ledger-line {
+  top: 86.5px; }
+
+.note-d:before {
+  top: 0px; }
+
+.note-d ~ .ledger-line {
+  top: 78px; }
+
+.note-e:before {
+  top: -8.5px; }
+
+.note-e ~ .ledger-line {
+  top: 69.5px; }
+
+.note-f:before {
+  top: -17px; }
+
+.note-f ~ .ledger-line {
+  top: 61px; }
+
+.note-g:before {
+  top: -25.5px; }
+
+.note-g ~ .ledger-line {
+  top: 52.5px; }
+
+.note-a:before {
+  top: -34px; }
+
+.note-a ~ .ledger-line {
+  top: 44px; }
+
+.note-b:before {
+  top: -42.5px; }
+
+.note-b ~ .ledger-line {
+  top: 35.5px; }
+
+.octave-4:before,
+.octave-4 ~ .ledger-line {
+  margin-top: -2px; }
+
+.octave-5:before,
+.octave-5 ~ .ledger-line {
+  margin-top: -61.5px; }
+
+.scale {
+  position: relative;
+  text-align: center; }
+
+.staff {
+  width: 100%;
+  margin-bottom: 2rem; }
+  .staff .line {
+    height: 1px;
+    background: black;
+    margin: 1rem 0; }
+
+.clef {
+  position: absolute;
+  font-size: 9rem;
+  top: -3rem; }
