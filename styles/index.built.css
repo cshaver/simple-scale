@@ -49,6 +49,34 @@ html.no-js .no-js {
   display: inline-block;
   position: relative; }
 
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
 .note-button {
   position: relative;
   font-size: 2rem;
@@ -67,15 +95,13 @@ html.no-js .no-js {
      border-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), to(black));
      border-image: linear-gradient(to bottom, transparent 20%, black 100%);
   border-image-slice: 1; }
-  .note-button:active {
-    color: black; }
-    .note-button:active:before {
-      -webkit-transform: scale(1.1) translateY(-2%);
-              transform: scale(1.1) translateY(-2%); }
+  .note-button:active:before {
+    -webkit-animation: shake infinite 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+            animation: shake infinite 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
   .note-button:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5);
-            box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5); }
+    -webkit-box-shadow: 0 0 0 3px rgba(59, 153, 252, 0.5);
+            box-shadow: 0 0 0 3px rgba(59, 153, 252, 0.5); }
   .note-button:before {
     content: '';
     position: absolute;
@@ -84,8 +110,6 @@ html.no-js .no-js {
     right: 0;
     width: 3rem;
     height: 4.9rem;
-    -webkit-transition: all 0.03s ease-in;
-    transition: all 0.03s ease-in;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -149,6 +173,54 @@ html.no-js .no-js {
 .octave-5:before,
 .octave-5 ~ .ledger-line {
   margin-top: -61.5px; }
+
+[name=C4] {
+  color: #f9f900; }
+  [name=C4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(249, 249, 0, 0.5);
+            box-shadow: 0 0 0 3px rgba(249, 249, 0, 0.5); }
+
+[name=D4] {
+  color: green; }
+  [name=D4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.5);
+            box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.5); }
+
+[name=E4] {
+  color: red; }
+  [name=E4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); }
+
+[name=F4] {
+  color: blue; }
+  [name=F4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.5); }
+
+[name=G4] {
+  color: purple; }
+  [name=G4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.5);
+            box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.5); }
+
+[name=A4] {
+  color: orange; }
+  [name=A4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5); }
+
+[name=B4] {
+  color: pink; }
+  [name=B4]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5); }
+
+[name=C5] {
+  color: silver; }
+  [name=C5]:focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(192, 192, 192, 0.5);
+            box-shadow: 0 0 0 3px rgba(192, 192, 192, 0.5); }
 
 .scale {
   position: relative;
