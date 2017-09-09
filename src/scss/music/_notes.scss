@@ -11,6 +11,26 @@
 	position: relative;
 }
 
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
 .note-button {
 	position: relative;
 	font-size: 2rem;
@@ -24,17 +44,13 @@
 	border-image: linear-gradient(to bottom, transparent 20%, black 100%);
  	border-image-slice: 1;
 
-	&:active {
-		color: black;
-
-		&:before {
-			transform: scale(1.1) translateY(-2%);
-		}
+	&:active:before {
+		animation: shake infinite 0.5s cubic-bezier(.36,.07,.19,.97) both;
 	}
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 3px transparentize(pink, 0.5);
+		box-shadow: 0 0 0 3px transparentize(#3b99fc, 0.5);
 	}
 
 	&:before {
@@ -46,8 +62,6 @@
 		right: 0;
 		width: 3rem;
 		height: 4.9rem;
-
-		transition: all 0.03s ease-in;
 
 		background: {
 			repeat: no-repeat;
@@ -71,6 +85,16 @@
 
 $-notes: (c, d, e, f, g, a, b);
 $-octaves: (4, 5);
+$-note-colors: (
+	C4: darken(yellow, 1.2),
+	D4: green,
+	E4: red,
+	F4: blue,
+	G4: purple,
+	A4: orange,
+	B4: pink,
+	C5: silver
+);
 
 $note-increments: 8.5;
 $note-offset: 64;
@@ -102,6 +126,15 @@ $ledger-line-offset: 63;
 		&:before,
 		& ~ .ledger-line {
 			margin-top: #{$offset}px;
+		}
+	}
+}
+
+@each $note, $color in $-note-colors {
+	[name=#{$note}] {
+		color: $color;
+		&:focus {
+			box-shadow: 0 0 0 3px transparentize($color, 0.5);
 		}
 	}
 }
