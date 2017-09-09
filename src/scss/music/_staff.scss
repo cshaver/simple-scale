@@ -1,0 +1,21 @@
+.scale {
+	position: relative;
+	text-align: center;
+}
+
+.staff {
+	width: 100%;
+	margin-bottom: 2rem;
+
+	.line {
+		height: 1px;
+		background: black;
+		margin: 1rem 0;
+	}
+}
+
+.clef {
+	position: absolute;
+	font-size: 9rem;
+	top: -3rem;
+}

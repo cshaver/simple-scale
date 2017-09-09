@@ -1,0 +1,73 @@
+
+.notes {
+	margin-left: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.note {
+	display: inline-block;
+}
+
+.note-button {
+	width: 3rem;
+	font-size: 2rem;
+
+	&:before,
+	& ~ .ledger-line {
+		position: absolute;
+		top: 0;
+		font-size: 5rem;
+		width: 3rem;
+  	transform: translateX(-50%);
+	}
+
+	&:before {
+		content: '♩';
+	}
+
+	& ~ .ledger-line {
+		display: block;
+		width: 0.5em;
+		margin-left: 20px;
+		border-top: 1px solid black;
+	}
+}
+
+$-notes: (c, d, e, f, g, a, b);
+$-octaves: (4, 5);
+
+$note-increments: 8.5;
+$note-offset: (2 * $note-increments);
+
+$octave-increments: (7 * $note-increments);
+$octave-offset: -2;
+
+$ledger-line-offset: 78;
+
+@for $i from 1 through length($-notes) {
+	$note: nth($-notes, $i);
+	$offset: $note-offset - ($i * $note-increments);
+
+	.note-#{$note}{
+		&:before {
+			top: #{$offset}px;
+		}
+		& ~ .ledger-line {
+			top: #{$offset + $ledger-line-offset}px;
+		}
+	}
+}
+
+@for $i from 1 through length($-octaves) {
+	$octave: nth($-octaves, $i);
+	$offset: $octave-offset - (($i - 1) * $octave-increments);
+
+	.octave-#{$octave}{
+		&:before,
+		& ~ .ledger-line {
+			margin-top: #{$offset}px;
+		}
+	}
+}

@@ -1,21 +1,30 @@
-var path = require('path');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: './src/js/index.js',
+	entry: {
+		index: './src/js/index.js'
+	},
 	output: {
-		filename: 'index.built.js',
-		path: path.resolve(__dirname, 'dist/scripts')
+		filename: 'scripts/[name].built.js',
+		chunkFilename: 'scripts/[id].built.js',
+		path: path.resolve(__dirname, 'dist/')
 	},
 	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: [{
-				loader: 'style-loader' // creates style nodes from JS strings
-			}, {
-				loader: 'css-loader' // translates CSS into CommonJS
-			}, {
-				loader: 'sass-loader' // compiles Sass to CSS
-			}]
-		}]
-	}
+		loaders: [
+			// Extract scss files
+			{
+				test: /\.scss$/,
+				loader: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: 'css-loader!sass-loader'
+				})
+			}
+			// You could also use other loaders the same way. I. e. the autoprefixer-loader
+		]
+	},
+	// Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
+	plugins: [
+		new ExtractTextPlugin('styles/[name].built.css')
+	]
 };
