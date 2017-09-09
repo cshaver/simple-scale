@@ -1,18 +1,14 @@
-@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Arial', sans-serif; }
+  font-family: system-ui, sans-serif; }
 
 main {
   padding: 1em;
   max-width: 980px;
   margin: 0 auto; }
-
-section + section {
-  margin-top: 2em; }
 
 ul, li {
   margin: 0;
@@ -55,10 +51,9 @@ html.no-js .no-js {
 
 .note-button {
   position: relative;
-  font-family: 'Arial', sans-serif;
   font-size: 2rem;
   width: 3rem;
-  padding: 7rem 0 0.5rem;
+  padding: 8rem 0 0.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -75,73 +70,77 @@ html.no-js .no-js {
   .note-button:active {
     color: black; }
     .note-button:active:before {
-      -webkit-transform: translateY(-5%) translateX(-50%);
-              transform: translateY(-5%) translateX(-50%); }
+      -webkit-transform: scale(1.1) translateY(-2%);
+              transform: scale(1.1) translateY(-2%); }
   .note-button:focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5);
             box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5); }
-  .note-button:before,
-  .note-button ~ .ledger-line {
+  .note-button:before {
+    content: '';
     position: absolute;
     top: 0;
-    font-size: 5rem; }
-  .note-button:before {
-    content: '\2669';
-    width: 100%;
+    left: 0;
+    right: 0;
+    width: 3rem;
+    height: 4.9rem;
     -webkit-transition: all 0.03s ease-in;
     transition: all 0.03s ease-in;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); }
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("/src/images/quarter-note.svg"); }
   .note-button ~ .ledger-line {
     display: block;
+    border-top: 1px solid black;
     width: 80%;
+    position: absolute;
+    top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    border-top: 1px solid black; }
+            transform: translateX(-50%); }
 
 .note-c:before {
-  top: 0px; }
+  top: 55.5px; }
 
 .note-c ~ .ledger-line {
-  top: 87px; }
+  top: 118.5px; }
 
 .note-d:before {
-  top: -8.5px; }
+  top: 47px; }
 
 .note-d ~ .ledger-line {
-  top: 78.5px; }
+  top: 110px; }
 
 .note-e:before {
-  top: -17px; }
+  top: 38.5px; }
 
 .note-e ~ .ledger-line {
-  top: 70px; }
+  top: 101.5px; }
 
 .note-f:before {
-  top: -25.5px; }
+  top: 30px; }
 
 .note-f ~ .ledger-line {
-  top: 61.5px; }
+  top: 93px; }
 
 .note-g:before {
-  top: -34px; }
+  top: 21.5px; }
 
 .note-g ~ .ledger-line {
-  top: 53px; }
+  top: 84.5px; }
 
 .note-a:before {
-  top: -42.5px; }
+  top: 13px; }
 
 .note-a ~ .ledger-line {
-  top: 44.5px; }
+  top: 76px; }
 
 .note-b:before {
-  top: -51px; }
+  top: 4.5px; }
 
 .note-b ~ .ledger-line {
-  top: 36px; }
+  top: 67.5px; }
 
 .octave-4:before,
 .octave-4 ~ .ledger-line {
@@ -157,15 +156,20 @@ html.no-js .no-js {
   min-width: 460px; }
 
 .staff {
+  position: absolute;
   width: 100%;
-  margin-bottom: 2rem;
-  position: absolute; }
+  padding: 1rem 0; }
   .staff .line {
     height: 1px;
     background: black;
-    margin: 0 0 1rem; }
+    margin: 1rem 0; }
 
 .clef {
   position: absolute;
-  font-size: 9rem;
-  top: -3rem; }
+  top: 5px;
+  width: 4rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/src/images/treble-clef.svg"); }
